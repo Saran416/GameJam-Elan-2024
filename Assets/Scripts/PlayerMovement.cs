@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         // when to jump
         if (Input.GetButtonDown("Jump") && readyToJump && grounded)
         {
+            Debug.Log("Jumping");
             readyToJump = false;
 
             Jump();
@@ -84,7 +86,10 @@ public class PlayerMovement : MonoBehaviour
 
         // on ground
         if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        }
+            
 
         // in air
         else if (!grounded)
