@@ -1135,6 +1135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 1110644935}
   threshold: -25
+  light: {fileID: 0}
 --- !u!1 &1543331269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06a665eeaae9f024abf82a1667374003, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -152
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06a665eeaae9f024abf82a1667374003, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1757,8 +1758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345ffaab26bd244408c70ae938c28d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 500
-  sensY: 500
+  sensX: 200
+  sensY: 200
   orientation: {fileID: 452767425}
   camHolder: {fileID: 1558471206}
 --- !u!1001 &2131536731
@@ -1924,3 +1925,5 @@ SceneRoots:
   - {fileID: 208714750}
   - {fileID: 2131536731}
   - {fileID: 1781065503}
+  - {fileID: 284201046}
+  - {fileID: 1110644935}

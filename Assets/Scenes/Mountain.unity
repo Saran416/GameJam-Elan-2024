@@ -4202,8 +4202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345ffaab26bd244408c70ae938c28d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 500
-  sensY: 500
+  sensX: 200
+  sensY: 200
   orientation: {fileID: 2064027942}
   camHolder: {fileID: 370262067}
 --- !u!4 &977176020 stripped
@@ -12272,7 +12272,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!4 &1720617583
 Transform:
@@ -12387,7 +12387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 644728814}
-  threshold: -80
+  threshold: -100
   light: {fileID: 0}
 --- !u!1001 &1730191429
 PrefabInstance:
