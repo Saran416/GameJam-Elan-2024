@@ -2230,6 +2230,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4457848601906800, guid: f661498175107c749a33d97304c423eb, type: 3}
   m_PrefabInstance: {fileID: 2106231635}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1280706738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -105
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560011779526598737, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514316255112028074, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514316255112028074, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514316255112028074, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975381909145793179, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_Name
+      value: SnowSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975381909145793179, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca82e5a30b820e84a9602618bdb0c49a, type: 3}
 --- !u!4 &1383383773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4457848601906800, guid: f661498175107c749a33d97304c423eb, type: 3}
@@ -2367,6 +2444,7 @@ GameObject:
   - component: {fileID: 1720617583}
   - component: {fileID: 1720617582}
   - component: {fileID: 1720617584}
+  - component: {fileID: 1720617585}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2426,7 +2504,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720617581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0a1d7cd5de0e8640a1930f4f69eb30e, type: 3}
   m_Name: 
@@ -2443,6 +2521,62 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 2064027942}
+--- !u!114 &1720617585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720617581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f83039567fa6d5439249ae6de2ba317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 256
+  wallrunForce: 10
+  maxWallrunTime: 5
+  maxWallSpeed: 30
+  maxWallRunCameraTilt: 10
+  wallRunCameraTilt: 0
+  SinGravity: 0
+  playerEnterPos: {x: 0, y: 0, z: 0}
+  playerCam: {fileID: 963194228}
+  orientation: {fileID: 2064027942}
+  moveSpeed: 1000
+  maxSpeed: 7
+  grounded: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  counterMovement: 0.175
+  maxSlopeAngle: 35
+  slideForce: 400
+  slideCounterMovement: 0.2
+  crouchGravityMultiplier: 0
+  jumpForce: 150
+  startDoubleJumps: 1
+  x: 0
+  y: 0
+  dashForce: 0
+  dashCooldown: 0
+  dashTime: 0
+  maxRocketTime: 0
+  rocketForce: 0
+  maxSonicSpeed: 0
+  sonicSpeedForce: 0
+  timeBetweenNextSonicBoost: 0
+  flashCooldown: 0
+  flashRange: 0
+  maxFlashesLeft: 0
+  flashesLeft: 3
+  climbForce: 0
+  maxClimbSpeed: 0
+  whatIsLadder:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &1772522912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3290,3 +3424,4 @@ SceneRoots:
   - {fileID: 555127105}
   - {fileID: 1068863078}
   - {fileID: 938361453}
+  - {fileID: 1280706738}
