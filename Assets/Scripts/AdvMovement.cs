@@ -1,7 +1,6 @@
 ﻿
 using System;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class WallRunTutorial : MonoBehaviour
 {
@@ -12,10 +11,13 @@ public class WallRunTutorial : MonoBehaviour
     //Wallrunning
     public LayerMask whatIsWall;
     public float wallrunForce,maxWallrunTime, maxWallSpeed;
-    bool isWallRight, isWallLeft;
-    bool isWallRunning, isTouchingWall;
+    bool isWallRight = false, isWallLeft = false;
+    bool isWallRunning = false, isTouchingWall = false;
     bool exitWallRun = false;
     public float maxWallRunCameraTilt, wallRunCameraTilt;
+
+    public bool SinGravity = false;
+    public Vector3 playerEnterPos = Vector3.zero;
 
     Vector3 currentWallNormal = Vector3.zero;
     Vector3 baseVelocity = Vector3.zero;
@@ -60,7 +62,7 @@ public class WallRunTutorial : MonoBehaviour
         isWallLeft = Physics.Raycast(transform.position, -orientation.right, 1f, whatIsWall);
 
         //leave wall run
-        if (!isWallLeft && !isWallRight || exitWallRun) StopWallRun();
+        if ((!isWallLeft && !isWallRight || exitWallRun) && isWallRunning) StopWallRun();
         //reset double jump (if you have one :D)
         if (isWallLeft || isWallRight) doubleJumpsLeft = startDoubleJumps;
     }
@@ -168,17 +170,22 @@ public class WallRunTutorial : MonoBehaviour
         Movement();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         MyInput();
         Look();
         CheckForWall();
         SonicSpeed();
         WallRunInput();
+
+        if(SinGravity)
+        {
+            rb.useGravity = false;
+        }
     }
 
     /// <summary>
-    /// Find user input. Should put this in its own class but im lazy
+    /// Find user input. Should put this in its own class but im lzy
     /// </summary>
     private void MyInput()
     {
