@@ -677,8 +677,60 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2652482934185297326, guid: 954dc606209a1e5489c09c608d82a59b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 937842950}
   m_SourcePrefab: {fileID: 100100000, guid: 954dc606209a1e5489c09c608d82a59b, type: 3}
+--- !u!1 &937842949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2652482934185297326, guid: 954dc606209a1e5489c09c608d82a59b, type: 3}
+  m_PrefabInstance: {fileID: 937842948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &937842950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937842949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd292de07eaaae948a9257eb8a6a8f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: EndScreen
+--- !u!1 &1110644934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1110644935}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1110644935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110644934}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.9014282, y: -0.104812145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1174211007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,6 +931,7 @@ GameObject:
   - component: {fileID: 1526911279}
   - component: {fileID: 1526911278}
   - component: {fileID: 1526911280}
+  - component: {fileID: 1526911281}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1011,6 +1064,20 @@ MonoBehaviour:
   whatIsLadder:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &1526911281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526911276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef96850db217b04f8e2d4c75987c3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 1110644935}
+  threshold: -25
 --- !u!1 &1543331269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1457,7 @@ Transform:
   m_GameObject: {fileID: 1802374963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 199.2, y: 54.8, z: 27.915293}
+  m_LocalPosition: {x: 84.94, y: 6.6, z: 27.915293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1730,3 +1797,4 @@ SceneRoots:
   - {fileID: 1792500005}
   - {fileID: 208714750}
   - {fileID: 2131536731}
+  - {fileID: 1110644935}
