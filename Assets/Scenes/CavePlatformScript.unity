@@ -232,7 +232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &170657213
 Light:
   m_ObjectHideFlags: 0
@@ -802,15 +802,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592640608725440, guid: dc9954dcaaaee02409e17bacb3dcc453, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -59.28
+      value: -58.88
       objectReference: {fileID: 0}
     - target: {fileID: 4592640608725440, guid: dc9954dcaaaee02409e17bacb3dcc453, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 52.89
+      value: 52.29
       objectReference: {fileID: 0}
     - target: {fileID: 4592640608725440, guid: dc9954dcaaaee02409e17bacb3dcc453, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.15
+      value: -55.5
       objectReference: {fileID: 0}
     - target: {fileID: 4592640608725440, guid: dc9954dcaaaee02409e17bacb3dcc453, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2357,10 +2357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da75469f860dcfb4aadfd9c20b3d3b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 10
+  count: 15
   isOn: 0
   torch: {fileID: 1159654479}
-  countDisplay: {fileID: 967487863}
+  countDisplay: {fileID: 919535945}
   tempTime: 0
   img: {fileID: 1755117533}
 --- !u!114 &1526911282
