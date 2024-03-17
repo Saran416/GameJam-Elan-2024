@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public string nextLevel = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var scene = SceneManager.LoadSceneAsync("FGravity");
+        var scene = SceneManager.LoadSceneAsync(nextLevel);
     }
 
     // Update is called once per frame
