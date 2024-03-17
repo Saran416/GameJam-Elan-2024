@@ -2389,6 +2389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 111467115}
   threshold: -150
+  light: {fileID: 1526911281}
 --- !u!1 &1543331269
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,3 +3685,4 @@ SceneRoots:
   - {fileID: 984484850}
   - {fileID: 111467115}
   - {fileID: 286784939}
+  - {fileID: 697820754}

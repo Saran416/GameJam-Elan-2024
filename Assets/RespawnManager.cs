@@ -6,6 +6,7 @@ public class RespawnManager : MonoBehaviour
 {
     public Transform respawnPoint;
     public float threshold = -150.0f;
+    public Light light;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,11 @@ public class RespawnManager : MonoBehaviour
         if(transform.position.y < threshold)
         {
             transform.position = respawnPoint.position;
+
+            if(light != null)
+            {
+                light.count = 15;
+            }
         }
     }
 }
