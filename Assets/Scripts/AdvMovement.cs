@@ -14,7 +14,10 @@ public class WallRunTutorial : MonoBehaviour
     public float wallrunForce,maxWallrunTime, maxWallSpeed;
     bool isWallRight, isWallLeft;
     bool isWallRunning, isTouchingWall;
+    bool exitWallRun = false;
     public float maxWallRunCameraTilt, wallRunCameraTilt;
+
+    Vector3 currentWallNormal = Vector3.zero;
 
     private void WallRunInput() //make sure to call in void Update
     {
@@ -39,14 +42,15 @@ public class WallRunTutorial : MonoBehaviour
 
             //Make sure char sticks to wall
             if (isWallRight)
-                rb.AddForce(orientation.right * wallrunForce / 5 * Time.deltaTime);
+                rb.AddForce(-currentWallNormal * wallrunForce / 5 * Time.deltaTime);
             else
-                rb.AddForce(-orientation.right * wallrunForce / 5 * Time.deltaTime);
+                rb.AddForce(-currentWallNormal * wallrunForce / 5 * Time.deltaTime);
         }
     }
     private void StopWallRun()
     {
         isWallRunning = false;
+        exitWallRun = false;
         rb.useGravity = true;
     }
     private void CheckForWall() //make sure to call in void Update
@@ -55,7 +59,7 @@ public class WallRunTutorial : MonoBehaviour
         isWallLeft = Physics.Raycast(transform.position, -orientation.right, 1f, whatIsWall);
 
         //leave wall run
-        if (!isWallLeft && !isWallRight) StopWallRun();
+        if (!isWallLeft && !isWallRight || exitWallRun) StopWallRun();
         //reset double jump (if you have one :D)
         if (isWallLeft || isWallRight) doubleJumpsLeft = startDoubleJumps;
     }
@@ -166,7 +170,7 @@ public class WallRunTutorial : MonoBehaviour
     private void Update()
     {
         MyInput();
-        //Look();
+        Look();
         CheckForWall();
         SonicSpeed();
         WallRunInput();
@@ -182,11 +186,22 @@ public class WallRunTutorial : MonoBehaviour
         jumping = Input.GetButton("Jump");
         crouching = Input.GetKey(KeyCode.LeftShift);
 
+        if (x < 0.0f && isWallLeft)
+        {
+            x = 0.0f;
+        }
+        if (x > 0.0f && isWallRight)
+        {
+            x = 0.0f;
+        }
+
         //Crouching
         if (Input.GetKeyDown(KeyCode.LeftShift))
             StartCrouch();
         if (Input.GetKeyUp(KeyCode.LeftShift))
             StopCrouch();
+
+        if(Input.GetButtonDown("Jump") && isWallRunning) exitWallRun = true;
 
         //Double Jumping
         if (Input.GetButtonDown("Jump") && !grounded && doubleJumpsLeft >= 1)
@@ -264,7 +279,7 @@ public class WallRunTutorial : MonoBehaviour
         CounterMovement(x, y, mag);
 
         //If holding jump && ready to jump, then jump
-        if (readyToJump && jumping && grounded && !rocketActive) Jump();
+        if (readyToJump && jumping && grounded && !rocketActive && !isWallRunning) Jump();
 
         //ResetStuff when touching ground
         if (grounded)
@@ -537,23 +552,11 @@ public class WallRunTutorial : MonoBehaviour
 
     private float desiredX;
 
-    /*
+    
     private void Look()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-
-        //Find current look rotation
-        Vector3 rot = playerCam.transform.localRotation.eulerAngles;
-        desiredX = rot.y + mouseX;
-
-        //Rotate, and also make sure we dont over- or under-rotate.
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        //Perform the rotations
-        playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, wallRunCameraTilt);
-        orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
+          //Perform the rotations
+          playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, wallRunCameraTilt);
 
         //While Wallrunning
         //Tilts camera in .5 second
@@ -568,7 +571,7 @@ public class WallRunTutorial : MonoBehaviour
         if (wallRunCameraTilt < 0 && !isWallRight && !isWallLeft)
             wallRunCameraTilt += Time.deltaTime * maxWallRunCameraTilt * 2;
     }
-    */
+    
 
     private void CounterMovement(float x, float y, Vector2 mag)
     {
@@ -633,6 +636,8 @@ public class WallRunTutorial : MonoBehaviour
         if (whatIsWall != (whatIsWall | (1 << layer))) return;
 
         isTouchingWall = true;
+
+        currentWallNormal = collision.contacts[0].normal;
     }
 
     /// <summary>
