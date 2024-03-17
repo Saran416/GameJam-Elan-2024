@@ -8,27 +8,39 @@ public class MovingScript : MonoBehaviour
     public int currIndex = 0;
     public float speed = 2f;
 
-    public Vector3 currentVelocity;
+    Rigidbody thisRB;
+    private void Start()
+    {
+        thisRB = GetComponent<Rigidbody>();
+    }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Vector3.Distance(transform.position, wavepoints[currIndex].transform.position) < 0.1f)
         {
             currIndex++;
-            if(currIndex >= wavepoints.Length) {
+            if (currIndex >= wavepoints.Length)
+            {
                 currIndex = 0;
             }
         }
-        currentVelocity = (Vector3.MoveTowards(transform.position, wavepoints[currIndex].transform.position, speed * Time.deltaTime) - transform.position) / Time.deltaTime;
 
         transform.position = Vector3.MoveTowards(transform.position, wavepoints[currIndex].transform.position, speed*Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "PlayerObj")
+        if (collision.gameObject.name == "Player")
         {
-            collision.gameObject.GetComponentInParent<Transform>().SetParent(transform);
+            collision.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            collision.transform.SetParent(null);
         }
     }
 

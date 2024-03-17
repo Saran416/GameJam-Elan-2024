@@ -18,6 +18,7 @@ public class WallRunTutorial : MonoBehaviour
     public float maxWallRunCameraTilt, wallRunCameraTilt;
 
     Vector3 currentWallNormal = Vector3.zero;
+    Vector3 baseVelocity = Vector3.zero;
 
     private void WallRunInput() //make sure to call in void Update
     {
@@ -167,7 +168,7 @@ public class WallRunTutorial : MonoBehaviour
         Movement();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         MyInput();
         Look();
@@ -200,6 +201,8 @@ public class WallRunTutorial : MonoBehaviour
             StartCrouch();
         if (Input.GetKeyUp(KeyCode.LeftShift))
             StopCrouch();
+
+        if (Input.GetButtonDown("Jump")) Debug.Log("Jumping");
 
         if(Input.GetButtonDown("Jump") && isWallRunning) exitWallRun = true;
 
