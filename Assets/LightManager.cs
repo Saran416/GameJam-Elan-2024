@@ -21,7 +21,7 @@ public class Light : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.E) && !isOn){
+        if (Input.GetKey(KeyCode.E) && !isOn && count > 0){
             startTime = Time.time;
             tempTime = Time.time;
             isOn  = true;

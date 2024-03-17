@@ -8,9 +8,13 @@ public class Platform : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if(collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
-            
+            collision.gameObject.GetComponent<Light>().count += 5;
+        }
+        else if (collision.gameObject.GetComponentInParent<PlayerMovement>() != null)
+        {
+            collision.gameObject.GetComponent<Light>().count += 5;
         }
     }
 }
