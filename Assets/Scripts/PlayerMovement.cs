@@ -70,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         // when to jump
         if (Input.GetButtonDown("Jump") && readyToJump && grounded)
         {
-            Debug.Log("Jumping");
             readyToJump = false;
 
             Jump();

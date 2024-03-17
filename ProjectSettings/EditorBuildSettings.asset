@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/CavePlatformScript.unity
+    guid: 9c406c6740356094ca2891174b141dcf
   m_configObjects: {}

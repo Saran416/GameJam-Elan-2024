@@ -1,16 +1,14 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Platform : MonoBehaviour
+public class matchCollection : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if(collision.gameObject.name == "PlayerObj")
         {
-            
+            Debug.Log("tesxt");
         }
     }
 }
