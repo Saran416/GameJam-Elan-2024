@@ -42,6 +42,5 @@ lvl3: Different gravity at different positions (guess the pattern of gravity)<br
 Game development software used is Unity<br>
 Some assets used are made by us using Blender<br>
 Other Assets used Links:<br>
-1. https://sketchfab.com/3d-models/subterranean-city-e47306a019bc4a71989af491b319a5
-a8<br>
+1. https://sketchfab.com/3d-models/subterranean-city-e47306a019bc4a71989af491b319a5a8<br>
 2. https://www.cgtrader.com/free-3d-models/exterior/historic-exterior/rpg-poly-pack-lite<br>
